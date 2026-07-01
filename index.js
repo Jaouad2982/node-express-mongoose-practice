@@ -1,4 +1,5 @@
 const fs = require("fs");
+const http = require("http");
 //blocking way
 const fileToread = fs.readFileSync("./starter/txt/input.txt", "utf-8");
 const fileToWrite = `${fileToread} ${new Date()}`;
@@ -17,3 +18,12 @@ const fileRead = fs.readFile(
 // write file async
 // fs.writeFile("./starter/txt/output.txt", "utf-8", fileRead);
 // console.log("file written sync ==> output.txt");
+
+//create a simple web server
+const server = http.createServer((req, res) => {
+  res.end("Hello from server");
+});
+
+server.listen(PORT, "127.0.0.1", () => {
+  console.log("listening on port " + port);
+});
