@@ -75,3 +75,16 @@ app.put("/api/v1/tours/:id", (req, res) => {
     message: "put request",
   });
 });
+
+app.delete("/api/v1/tours/id", (req, res) => {
+  if (tours.length > id) {
+    res.status(204).json({
+      status: "fail",
+      message: " Invalid Id",
+    });
+  }
+  res.status(202).json({
+    status: "success",
+    data: null,
+  });
+});
