@@ -63,3 +63,15 @@ app.get("/api/v1/tours/:id", (req, res) => {
     },
   });
 });
+
+app.patch("/api/v1/tours/:id", (req, res) => {
+  res.status(202).json({
+    message: "patch request",
+  });
+});
+
+app.put("/api/v1/tours/:id", (req, res) => {
+  res.status(202).json({
+    message: "put request",
+  });
+});
